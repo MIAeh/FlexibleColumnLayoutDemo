@@ -1,0 +1,48 @@
+<mvc:View displayBlock="true" controllerName="sap.f.FlexibleColumnLayoutWithOneColumnStart.controller.Master" height="100%"
+	  xmlns="sap.m"
+	  xmlns:f="sap.f"
+	  xmlns:mvc="sap.ui.core.mvc">
+	<f:DynamicPage id="dynamicPageId"
+				   toggleHeaderOnTitleClick="false">
+
+		<!-- DynamicPage Content -->
+		<f:content>
+			<List
+					id="fieldTypeList"
+					items="{
+						path: 'fieldTypes>/itemTypes',
+						sorter: {
+							path: '',
+							group: '.getGroup',
+							descending: false
+						}
+					}"
+					mode="MultiSelect">
+				<headerToolbar>
+					<OverflowToolbar design="Transparent">
+						<Title text="Submodel" level="H2"/>
+						<ToolbarSpacer/>
+						<Button
+								id="createButton"
+								text="Create"/>
+						<Button
+								id="editButton"
+								text="Edit"
+								enabled="false"/>
+						<Button
+								id="deleteButton"
+								text="Delete"
+								enabled="false"/>
+					</OverflowToolbar>
+				</headerToolbar>
+
+				<StandardListItem
+						title="{fieldTypes>name}"
+						type="Navigation"
+						press=".onItemPress"
+				/>
+
+			</List>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

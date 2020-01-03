@@ -1,0 +1,91 @@
+<mvc:View displayBlock="true" controllerName="sap.f.FlexibleColumnLayoutWithOneColumnStart.controller.Detail" height="100%"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:f="sap.f"
+		xmlns:form="sap.ui.layout.form">
+
+	<f:DynamicPage>
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="{fieldTypes>name}"/>
+				</f:heading>
+				<f:actions>
+					<OverflowToolbarButton
+							type="Transparent"
+							icon="sap-icon://decline"
+							press=".handleClose"/>
+				</f:actions>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:content>
+			<Table
+					id="fieldDetailTable"
+					items="{
+						path: 'fieldTypes>elements'
+					}">
+				<columns>
+					<Column width="20%">
+						<Label text="Field Name"/>
+					</Column>
+					<Column width="10%">
+						<Label text="Key"/>
+					</Column>
+					<Column width="20%">
+						<Label text="Field Type/Enum Value"/>
+					</Column>
+					<Column width="15%">
+						<Label text="Mandatory"/>
+					</Column>
+					<Column width="15%">
+						<Label text="Multiple"/>
+					</Column>
+					<Column width="10%">
+						<Label text="Writable"/>
+					</Column>
+					<Column width="10%">
+						<Label text="Readable"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<VBox>
+							<FormattedText class="fieldTypeElementName" htmlText="{fieldTypes>name}" />
+							<Text text="{fieldTypes>label}" />
+						</VBox>
+						<VBox>
+							<Image
+									src="{= ${fieldTypes>key} ? 'images/icon-checked.png' : 'images/icon-unchecked.png' }"
+									width="20px"
+							/>
+
+						</VBox>
+						<VBox>
+							<Text text="{fieldTypes>type}"/>
+						</VBox>
+						<VBox>
+							<Image
+									src="{= ${fieldTypes>required} ? 'images/icon-checked.png' : 'images/icon-unchecked.png' }"
+									width="20px"/>
+						</VBox>
+						<VBox>
+							<Image
+									src="{= ${fieldTypes>localized} ? 'images/icon-checked.png' : 'images/icon-unchecked.png' }"
+									width="20px"/>
+						</VBox>
+						<VBox>
+							<Image
+									src="{= ${fieldTypes>writeable} ? 'images/icon-checked.png' : 'images/icon-unchecked.png' }"
+									width="20px"/>
+						</VBox>
+						<VBox>
+							<Image
+									src="{= ${fieldTypes>readable} ? 'images/icon-checked.png' : 'images/icon-unchecked.png' }"
+									width="20px"/>
+						</VBox>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

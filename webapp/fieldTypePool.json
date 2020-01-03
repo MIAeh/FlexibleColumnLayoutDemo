@@ -1,0 +1,72 @@
+[
+  {
+    "name": "QualifiedTrackingId",
+    "group": "CoreModel",
+    "fields": [
+      {
+        "fieldName": "Tracked Process Id",
+        "fieldId": "process_id",
+        "isKey": true,
+        "fieldType": "UUID",
+        "isMandatory": false,
+        "isMultiple": false,
+        "isWritable": false,
+        "isReadable": true
+      },
+      {
+        "fieldName": "Tracked Process",
+        "fieldId": "process",
+        "isKey": false,
+        "fieldType": "TrackedProcess",
+        "isMandatory": false,
+        "isMultiple": false,
+        "isWritable": false,
+        "isReadable": true
+      },
+      {
+        "fieldName": "Observed Tracked Process",
+        "fieldId": "observedProcess",
+        "isKey": true,
+        "fieldType": "TrackedProcess",
+        "isMandatory": false,
+        "isMultiple": false,
+        "isWritable": false,
+        "isReadable": true
+      },
+      {
+        "fieldName": "validFrom",
+        "fieldId": "validFrom",
+        "isKey": false,
+        "fieldType": "Timestamp",
+        "isMandatory": false,
+        "isMultiple": false,
+        "isWritable": false,
+        "isReadable": true
+      },
+      {
+        "fieldName": "valieTo",
+        "fieldId": "validTo",
+        "isKey": false,
+        "fieldType": "Timestamp",
+        "isMandatory": false,
+        "isMultiple": false,
+        "isWritable": false,
+        "isReadable": true
+      }
+    ]
+  },
+  {
+    "name": "PlannedEvent",
+    "group": "CoreModel",
+    "fields": [
+
+    ]
+  },
+  {
+    "name": "Reference",
+    "group": "CoreModel",
+    "fields": [
+
+    ]
+  }
+]

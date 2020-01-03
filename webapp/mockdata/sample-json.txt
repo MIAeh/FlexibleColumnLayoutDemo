@@ -1,0 +1,959 @@
+{
+  "name": "tfo",
+  "namespace": "com.sap.gtt.tfo",
+  "descr": "Track Freight Orders",
+  "version": "1.0.0",
+  "status": "DRAFT",
+  "modifiedAt": "2019-12-25T00:00:00.000Z",
+  "modifiedBy": "somebody@example.com",
+  "coreModel": {
+    "version": "2.0.0",
+    "processTypes": [
+      {
+        "name": "TrackedProcess",
+        "elements": [
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "string",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "length": 50
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "uuid",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "boolean",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "integer",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "decimal",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "precision": 12,
+            "scale": 9
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "date",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "timestamp",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "association",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "target": "SOSubModel.SalesOrderProcess",
+            "cardinality": {
+              "max": 1
+            }
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "composition",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "target": "FOSubModel.Stop",
+            "cardinality": {
+              "max": "*"
+            }
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "codelist",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "target": "FOSubModel.OrderStatus"
+          }
+        ],
+        "uiConfig": {
+          "fieldsOrder": [
+            {
+              "name": "string",
+              "context": "CoreModel",
+              "type": "string",
+              "visible": true
+            }
+          ],
+          "compositionsOrder": [
+            {
+              "name": "string",
+              "context": "CoreModel",
+              "type": "string",
+              "visible": true
+            }
+          ]
+        }
+      }
+    ],
+    "itemTypes": [
+      {
+        "name": "QualifiedTrackingId",
+        "elements": [
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "string",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "length": 50
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "uuid",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "boolean",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "integer",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "decimal",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "precision": 12,
+            "scale": 9
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "date",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "timestamp",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "association",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "target": "SOSubModel.SalesOrderProcess",
+            "cardinality": {
+              "max": 1
+            }
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "composition",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "target": "FOSubModel.Stop",
+            "cardinality": {
+              "max": "*"
+            }
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "codelist",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "target": "FOSubModel.OrderStatus"
+          }
+        ],
+        "uiConfig": {
+          "fieldsOrder": [
+            {
+              "name": "string",
+              "context": "CoreModel",
+              "type": "string",
+              "visible": true
+            }
+          ],
+          "compositionsOrder": [
+            {
+              "name": "string",
+              "context": "CoreModel",
+              "type": "string",
+              "visible": true
+            }
+          ]
+        }
+      }
+    ],
+    "eventTypes": [
+      {
+        "name": "GTTDelayedEvent",
+        "elements": [
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "string",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "length": 50
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "uuid",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "boolean",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "integer",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "decimal",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "precision": 12,
+            "scale": 9
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "date",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "timestamp",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "association",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "target": "SOSubModel.SalesOrderProcess",
+            "cardinality": {
+              "max": 1
+            }
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "composition",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "target": "FOSubModel.Stop",
+            "cardinality": {
+              "max": "*"
+            }
+          },
+          {
+            "name": "fieldName",
+            "label": "Field Label",
+            "type": "codelist",
+            "context": "CoreModel",
+            "key": false,
+            "required": false,
+            "localized": false,
+            "readable": true,
+            "writeable": true,
+            "target": "FOSubModel.OrderStatus"
+          }
+        ],
+        "uiConfig": {
+          "fieldsOrder": [
+            {
+              "name": "string",
+              "context": "CoreModel",
+              "type": "string",
+              "visible": true
+            }
+          ],
+          "compositionsOrder": [
+            {
+              "name": "string",
+              "context": "CoreModel",
+              "type": "string",
+              "visible": true
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "customModel": {
+    "schemaVersion": "1.0.0",
+    "subModels": [
+      {
+        "name": "FOSubModel",
+        "residencePeriod": 12,
+        "blockingPeriod": 14,
+        "processTypes": [
+          {
+            "name": "FreightOrderProcess",
+            "elements": [
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "string",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "length": 50
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "uuid",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "boolean",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "integer",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "decimal",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "precision": 12,
+                "scale": 9
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "date",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "timestamp",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "association",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "target": "SOSubModel.SalesOrderProcess",
+                "cardinality": {
+                  "max": 1
+                }
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "composition",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "target": "FOSubModel.Stop",
+                "cardinality": {
+                  "max": "*"
+                }
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "codelist",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "target": "FOSubModel.OrderStatus"
+              }
+            ],
+            "uiConfig": {
+              "fieldsOrder": [
+                {
+                  "name": "string",
+                  "context": "CoreModel",
+                  "type": "string",
+                  "visible": true
+                }
+              ],
+              "compositionsOrder": [
+                {
+                  "name": "string",
+                  "context": "CoreModel",
+                  "type": "string",
+                  "visible": true
+                }
+              ]
+            },
+            "descr": "Freight Order",
+            "parent": {
+              "target": "CoreModel.TrackedProcess"
+            },
+            "plannedEvents": [
+              {
+                "eventType": {
+                  "target": "FOSubModel.DepartureEvent",
+                  "descr": "Arrival Event"
+                },
+                "matchLocation": false,
+                "businessToleranceValue": "PT10M",
+                "technicalToleranceValue": "PT10M",
+                "periodicOverdueDetection": "PT10M",
+                "maxOverdueDetection": 3
+              }
+            ],
+            "admissibleUnplannedEvents": [
+              {
+                "eventType": {
+                  "target": "FOSubModel.DelayedEvent",
+                  "descr": "Delayed Event"
+                }
+              }
+            ]
+          }
+        ],
+        "itemTypes": [
+          {
+            "name": "StopItem",
+            "elements": [
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "string",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "length": 50
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "uuid",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "boolean",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "integer",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "decimal",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "precision": 12,
+                "scale": 9
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "date",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "timestamp",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "association",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "target": "SOSubModel.SalesOrderProcess",
+                "cardinality": {
+                  "max": 1
+                }
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "composition",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "target": "FOSubModel.Stop",
+                "cardinality": {
+                  "max": "*"
+                }
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "codelist",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "target": "FOSubModel.OrderStatus"
+              }
+            ],
+            "uiConfig": {
+              "fieldsOrder": [
+                {
+                  "name": "string",
+                  "context": "CoreModel",
+                  "type": "string",
+                  "visible": true
+                }
+              ],
+              "compositionsOrder": [
+                {
+                  "name": "string",
+                  "context": "CoreModel",
+                  "type": "string",
+                  "visible": true
+                }
+              ]
+            }
+          }
+        ],
+        "eventTypes": [
+          {
+            "name": "DelayedEvent",
+            "elements": [
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "string",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "length": 50
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "uuid",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "boolean",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "integer",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "decimal",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "precision": 12,
+                "scale": 9
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "date",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "timestamp",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "association",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "target": "SOSubModel.SalesOrderProcess",
+                "cardinality": {
+                  "max": 1
+                }
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "composition",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "target": "FOSubModel.Stop",
+                "cardinality": {
+                  "max": "*"
+                }
+              },
+              {
+                "name": "fieldName",
+                "label": "Field Label",
+                "type": "codelist",
+                "context": "CoreModel",
+                "key": false,
+                "required": false,
+                "localized": false,
+                "readable": true,
+                "writeable": true,
+                "target": "FOSubModel.OrderStatus"
+              }
+            ],
+            "uiConfig": {
+              "fieldsOrder": [
+                {
+                  "name": "string",
+                  "context": "CoreModel",
+                  "type": "string",
+                  "visible": true
+                }
+              ],
+              "compositionsOrder": [
+                {
+                  "name": "string",
+                  "context": "CoreModel",
+                  "type": "string",
+                  "visible": true
+                }
+              ]
+            },
+            "parent": {
+              "target": "CoreModel.GTTDelayedEvent"
+            }
+          }
+        ]
+      }
+    ],
+    "eventToActions": [
+      {
+        "name": "string"
+      }
+    ],
+    "translation": {
+      "translatedLanguages": [
+        {
+          "language": "ZH",
+          "translations": [
+            {
+              "object": {
+                "context": "SOSubModel",
+                "entity": "OrderStatus",
+                "field": "code",
+                "codeValue": "01"
+              },
+              "objectType": "CO",
+              "textType": "DESCR",
+              "textKey": "CO_OrderStatus_01_DESCR",
+              "sourceText": "Ready",
+              "translatedText": "Ready in Chinese"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

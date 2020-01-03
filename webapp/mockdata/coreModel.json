@@ -1,0 +1,1347 @@
+{
+  "version": "2.0.0",
+  "processTypes": [
+    {
+      "name": "TrackedProcess",
+      "elements": [
+        {
+          "name": "id",
+          "label": "Id",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": true,
+          "required": true,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "subaccountId",
+          "label": "SubaccountId",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": false,
+          "writeable": false
+        },
+        {
+          "name": "cloneInstanceId",
+          "label": "CloneInstanceId",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": false,
+          "writeable": false
+        },
+        {
+          "name": "trackedProcessType",
+          "label": "TrackedProcessType",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 255
+        },
+        {
+          "name": "altKey",
+          "label": "AltKey",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": true,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 255
+        },
+        {
+          "name": "scheme",
+          "label": "Scheme",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 255
+        },
+        {
+          "name": "partyId",
+          "label": "PartyId",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 50
+        },
+        {
+          "name": "logicalSystem",
+          "label": "LogicalSystem",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 10
+        },
+        {
+          "name": "trackingIdType",
+          "label": "TrackingIdType",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 40
+        },
+        {
+          "name": "trackingId",
+          "label": "TrackingId",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 50
+        },
+        {
+          "name": "processStatus",
+          "label": "ProcessStatus",
+          "type": "codelist",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 50,
+          "default": "asPlanned",
+          "enum": [
+            {
+              "value": "asPlanned",
+              "label": "AS_PLANNED"
+            },
+            {
+              "value": "early",
+              "label": "EARLY"
+            },
+            {
+              "value": "late",
+              "label": "LATE"
+            },
+            {
+              "value": "overdue",
+              "label": "OVERDUE"
+            },
+            {
+              "value": "delayed",
+              "label": "DELAYED"
+            }
+          ]
+        },
+        {
+          "name": "trackingIds",
+          "label": "TrackingIds",
+          "type": "composition",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "target": "QualifiedTrackingId",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        {
+          "name": "plannedEvents",
+          "label": "PlannedEvents",
+          "type": "composition",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "target": "PlannedEvent",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        {
+          "name": "processEvents",
+          "label": "ProcessEvents",
+          "type": "composition",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "target": "ProcessEventDirectory",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        {
+          "name": "lifeCycleStatus",
+          "label": "LifeCycleStatus",
+          "type": "codelist",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 50,
+          "default": "businessActive",
+          "enum": [
+            {
+              "value": "businessActive",
+              "label": "BUSINESS_ACTIVE"
+            },
+            {
+              "value": "endOfBusiness",
+              "label": "END_OF_BUSINESS"
+            },
+            {
+              "value": "endOfPurpose",
+              "label": "END_OF_PURPOSE"
+            },
+            {
+              "value": "endOfRetention",
+              "label": "END_OF_RETENTION"
+            }
+          ]
+        },
+        {
+          "name": "createdByUser",
+          "label": "CreatedByUser",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 64
+        },
+        {
+          "name": "creationDateTime",
+          "label": "CreationDateTime",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false
+        },
+        {
+          "name": "lastChangedByUser",
+          "label": "LastChangedByUser",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 64
+        },
+        {
+          "name": "lastChangeDateTime",
+          "label": "LastChangeDateTime",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false
+        },
+        {
+          "name": "version",
+          "label": "Version",
+          "type": "integer",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false
+        }
+      ]
+    }
+  ],
+  "itemTypes": [
+    {
+      "name": "TestEvent",
+      "elements": [
+        {
+          "name": "id",
+          "label": "Id",
+          "type": "uuid",
+          "context": "ATestModel",
+          "key": true,
+          "required": true,
+          "localized": false,
+          "readable": true,
+          "writeable": false
+        }
+      ]
+    },
+    {
+      "name": "QualifiedTrackingId",
+      "elements": [
+        {
+          "name": "process_id",
+          "label": "Process_id",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": true,
+          "required": true,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "process",
+          "label": "Process",
+          "type": "association",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "target": "TrackedProcess",
+          "cardinality": {
+            "max": 1
+          }
+        },
+        {
+          "name": "observedProcess",
+          "label": "ObservedProcess",
+          "type": "association",
+          "context": "CoreModel",
+          "key": true,
+          "required": true,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "target": "TrackedProcess",
+          "cardinality": {
+            "max": 1
+          }
+        },
+        {
+          "name": "validFrom",
+          "label": "ValidFrom",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "validTo",
+          "label": "ValidTo",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        }
+      ]
+    },
+    {
+      "name": "PlannedEvent",
+      "elements": [
+        {
+          "name": "id",
+          "label": "Id",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": true,
+          "required": true,
+          "localized": false,
+          "readable": true,
+          "writeable": false
+        },
+        {
+          "name": "process_id",
+          "label": "Process_id",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false
+        },
+        {
+          "name": "process",
+          "label": "Process",
+          "type": "association",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "target": "TrackedProcess",
+          "cardinality": {
+            "max": 1
+          }
+        },
+        {
+          "name": "eventType",
+          "label": "EventType",
+          "type": "string",
+          "context": "CoreModel",
+          "key": true,
+          "required": true,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": "255"
+        },
+        {
+          "name": "eventMatchKey",
+          "label": "EventMatchKey",
+          "type": "string",
+          "context": "CoreModel",
+          "key": true,
+          "required": true,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": "255"
+        },
+        {
+          "name": "longitude",
+          "label": "Longitude",
+          "type": "decimal",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "precision": 12,
+          "scale": 9,
+          "minimum": -180,
+          "maximum": 180
+        },
+        {
+          "name": "latitude",
+          "label": "Latitude",
+          "type": "decimal",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "precision": 12,
+          "scale": 9,
+          "minimum": -90,
+          "maximum": 90
+        },
+        {
+          "name": "eventStatus",
+          "label": "EventStatus",
+          "type": "codelist",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 50,
+          "default": "planned",
+          "enum": [
+            {
+              "value": "planned",
+              "label": "PLANNED"
+            },
+            {
+              "value": "earlyReported",
+              "label": "EAREARLY_REPORTEDLY"
+            },
+            {
+              "value": "reported",
+              "label": "REPORTED"
+            },
+            {
+              "value": "lateReported",
+              "label": "LATE_REPORTED"
+            },
+            {
+              "value": "overdue",
+              "label": "OVERDUE"
+            },
+            {
+              "value": "delayed",
+              "label": "DELAYED"
+            }
+          ]
+        },
+        {
+          "name": "payloadSequence",
+          "label": "PayloadSequence",
+          "type": "integer",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "isFinalPlannedEvent",
+          "label": "IsFinalPlannedEvent",
+          "type": "boolean",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "lastProcessEventDirectory",
+          "label": "LastProcessEventDirectory",
+          "type": "association",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "target": "ProcessEventDirectory",
+          "cardinality": {
+            "max": 1
+          }
+        },
+        {
+          "name": "nextOverdueDetection",
+          "label": "NextOverdueDetection",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "overdueDetectionCounter",
+          "label": "OverdueDetectionCounter",
+          "type": "integer",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "plannedTechnicalTimestamp",
+          "label": "PlannedTechnicalTimestamp",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "plannedTechTsEarliest",
+          "label": "PlannedTechTsEarliest",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "plannedTechTsLatest",
+          "label": "PlannedTechTsLatest",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "plannedBusinessTimestamp",
+          "label": "PlannedBusinessTimestamp",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "plannedBizTsEarliest",
+          "label": "PlannedBizTsEarliest",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "plannedBizTsLatest",
+          "label": "PlannedBizTsLatest",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "plannedBusinessTimeZone",
+          "label": "PlannedBusinessTimeZone",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 50
+        }
+      ]
+    },
+    {
+      "name": "ProcessEventDirectory",
+      "elements": [
+        {
+          "name": "id",
+          "label": "Id",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": true,
+          "required": true,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "process_id",
+          "label": "Process_id",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "process",
+          "label": "Process",
+          "type": "association",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "target": "TrackedProcess",
+          "cardinality": {
+            "max": 1
+          }
+        },
+        {
+          "name": "plannedEvent_id",
+          "label": "PlannedEvent_id",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "plannedEvent",
+          "label": "PlannedEvent",
+          "type": "association",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "target": "PlannedEvent",
+          "cardinality": {
+            "max": 1
+          }
+        },
+        {
+          "name": "event_id",
+          "label": "Event_id",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "event",
+          "label": "Event",
+          "type": "association",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "target": "Event",
+          "cardinality": {
+            "max": 1
+          }
+        },
+        {
+          "name": "correlationType",
+          "label": "CorrelationType",
+          "type": "codelist",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 50,
+          "enum": [
+            {
+              "value": "earlyReported",
+              "label": "EARLY_REPORTED"
+            },
+            {
+              "value": "reported",
+              "label": "REPORTED"
+            },
+            {
+              "value": "lateReported",
+              "label": "LATE_REPORTED"
+            },
+            {
+              "value": "unplanned",
+              "label": "UNPLANNED"
+            },
+            {
+              "value": "unplannedProcessCreationUpdate",
+              "label": "UNPLANNED_PROCESS_CREATION_UPDATE"
+            },
+            {
+              "value": "unplannedOverdue",
+              "label": "UNPLANNED_OVERDUE"
+            },
+            {
+              "value": "unplannedDelayed",
+              "label": "UNPLANNED_DELAYED"
+            },
+            {
+              "value": "unplannedResetPlanned",
+              "label": "UNPLANNED_RESET_PLANNED"
+            },
+            {
+              "value": "unplannedBlocking",
+              "label": "UNPLANNED_BLOCKING"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reference",
+      "elements": [
+        {
+          "name": "id",
+          "label": "Id",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": true,
+          "required": true,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "event_id",
+          "label": "Event_id",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "event",
+          "label": "Event",
+          "type": "association",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "target": "Event",
+          "cardinality": {
+            "max": 1
+          }
+        },
+        {
+          "name": "referenceType",
+          "label": "ReferenceType",
+          "type": "codelist",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 50,
+          "enum": [
+            {
+              "value": "tracking",
+              "label": "TRACKING"
+            }
+          ]
+        },
+        {
+          "name": "altKey",
+          "label": "AltKey",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": true,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 255
+        },
+        {
+          "name": "validFrom",
+          "label": "ValidFrom",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "validTo",
+          "label": "ValidTo",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "action",
+          "label": "Action",
+          "type": "codelist",
+          "context": "CoreModel",
+          "key": false,
+          "required": true,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 50,
+          "enum": [
+            {
+              "value": "add",
+              "label": "ADD"
+            },
+            {
+              "value": "delete",
+              "label": "DELETE"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Event",
+      "elements": [
+        {
+          "name": "id",
+          "label": "Id",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": true,
+          "required": true,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "subaccountId",
+          "label": "SubaccountId",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": false,
+          "writeable": false
+        },
+        {
+          "name": "cloneInstanceId",
+          "label": "CloneInstanceId",
+          "type": "uuid",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": false,
+          "writeable": false
+        },
+        {
+          "name": "modelNamespace",
+          "label": "ModelNamespace",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 255
+        },
+        {
+          "name": "eventType",
+          "label": "EventType",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 255
+        },
+        {
+          "name": "eventReasonText",
+          "label": "EventReasonText",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 255
+        },
+        {
+          "name": "eventReasonCode",
+          "label": "EventReasonCode",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 255
+        },
+        {
+          "name": "senderPartyId",
+          "label": "SenderPartyId",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 50
+        },
+        {
+          "name": "altKey",
+          "label": "AltKey",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 255
+        },
+        {
+          "name": "scheme",
+          "label": "Scheme",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 255
+        },
+        {
+          "name": "partyId",
+          "label": "PartyId",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 50
+        },
+        {
+          "name": "logicalSystem",
+          "label": "LogicalSystem",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 10
+        },
+        {
+          "name": "trackingIdType",
+          "label": "TrackingIdType",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 40
+        },
+        {
+          "name": "trackingId",
+          "label": "TrackingId",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 50
+        },
+        {
+          "name": "actualTechnicalTimestamp",
+          "label": "ActualTechnicalTimestamp",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false
+        },
+        {
+          "name": "actualBusinessTimestamp",
+          "label": "ActualBusinessTimestamp",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true
+        },
+        {
+          "name": "actualBusinessTimeZone",
+          "label": "ActualBusinessTimeZone",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 50
+        },
+        {
+          "name": "locationAltKey",
+          "label": "LocationAltKey",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 255
+        },
+        {
+          "name": "eventMatchKey",
+          "label": "EventMatchKey",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 255
+        },
+        {
+          "name": "longitude",
+          "label": "Longitude",
+          "type": "decimal",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "precision": 12,
+          "scale": 9,
+          "minimum": -180,
+          "maximum": 180
+        },
+        {
+          "name": "latitude",
+          "label": "Latitude",
+          "type": "decimal",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "precision": 12,
+          "scale": 9,
+          "minimum": -90,
+          "maximum": 90
+        },
+        {
+          "name": "references",
+          "label": "References",
+          "type": "association",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "target": "Reference",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        {
+          "name": "eventProcesses",
+          "label": "EventProcesses",
+          "type": "association",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "target": "ProcessEventDirectory",
+          "cardinality": {
+            "max": "*"
+          }
+        },
+        {
+          "name": "messageSourceType",
+          "label": "MessageSourceType",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 50
+        },
+        {
+          "name": "createdByUser",
+          "label": "CreatedByUser",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false,
+          "length": 64
+        },
+        {
+          "name": "creationDateTime",
+          "label": "CreationDateTime",
+          "type": "timestamp",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": false
+        }
+      ]
+    },
+    {
+      "name": "GTTDelayedEvent",
+      "parent": {
+        "target": "CoreModel.Event"
+      },
+      "elements": [
+        {
+          "name": "refPlannedEventType",
+          "label": "RefPlannedEventType",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 255
+        },
+        {
+          "name": "refPlannedEventMatchKey",
+          "label": "RefPlannedEventMatchKey",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 255
+        },
+        {
+          "name": "refPlannedEventLocationAltKey",
+          "label": "RefPlannedEventLocationAltKey",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 255
+        }
+      ]
+    },
+    {
+      "name": "GTTResetPlannedEventStatusEvent",
+      "parent": {
+        "target": "CoreModel.Event"
+      },
+      "elements": [
+        {
+          "name": "refPlannedEventType",
+          "label": "RefPlannedEventType",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 255
+        },
+        {
+          "name": "refPlannedEventMatchKey",
+          "label": "RefPlannedEventMatchKey",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 255
+        },
+        {
+          "name": "refPlannedEventLocationAltKey",
+          "label": "RefPlannedEventLocationAltKey",
+          "type": "string",
+          "context": "CoreModel",
+          "key": false,
+          "required": false,
+          "localized": false,
+          "readable": true,
+          "writeable": true,
+          "length": 255
+        }
+      ]
+    },
+    {
+      "name": "GTTDeletionEvent",
+      "parent": {
+        "target": "CoreModel.Event"
+      },
+      "elements": []
+    },
+    {
+      "name": "GTTDPPBlockingEvent",
+      "parent": {
+        "target": "CoreModel.Event"
+      },
+      "elements": []
+    },
+    {
+      "name": "GTTDPPDeletionEvent",
+      "parent": {
+        "target": "CoreModel.Event"
+      },
+      "elements": []
+    }
+  ]
+}
