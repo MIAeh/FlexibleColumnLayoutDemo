@@ -10,7 +10,7 @@
 			<List
 					id="fieldTypeList"
 					items="{
-						path: 'fieldTypes>/itemTypes',
+						path: 'model>/itemTypes',
 						sorter: {
 							path: '',
 							group: '.getGroup',
@@ -37,7 +37,7 @@
 				</headerToolbar>
 
 				<StandardListItem
-						title="{fieldTypes>name}"
+						title="{model>name}"
 						type="Navigation"
 						press=".onItemPress"
 				/>
